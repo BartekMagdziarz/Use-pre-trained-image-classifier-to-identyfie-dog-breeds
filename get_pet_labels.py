@@ -45,7 +45,7 @@ def get_pet_labels(image_dir):
     in_files = listdir(image_dir)
     
     # Creates empty dictionary for keys (image files names) and values (extracted and formatted pet labels)
-    pet_labels_dict = {}
+    results_dict = {}
     
     
     
@@ -78,8 +78,8 @@ def get_pet_labels(image_dir):
     # If filename doesn't already exist in dictionary add it and it's
     # pet label - otherwise print an error message because indicates 
     # duplicate files (filenames)
-            if in_files[i] not in pet_labels_dict:
-                pet_labels_dict[in_files[i]] = [pet_label]
+            if in_files[i] not in results_dict:
+                results_dict[in_files[i]] = [pet_label]
             else:
                 print("Warning, duplicate files exists in the directory", in_files[i])
         
@@ -87,4 +87,4 @@ def get_pet_labels(image_dir):
               
     # Replace None with the results_dic dictionary that you created with this
     # function
-    return pet_labels_dict
+    return results_dict
